@@ -1,0 +1,198 @@
+30/01/2022
+-----------
+
+
+
+                                      Flow Control / Control Flow
+                                      ---------------------------
+
+Flow control describe the order in which statements will be executed at runtime.
+
+                 
+                                      Control Flow
+                                      -------------
+
+Conditional Statements             Iterative Statements               Transfer Statements
+
+1.if                                1.for                             1.break
+2.else                              2.while                           2.continue
+3.if-elif-else                                                        3.pass
+
+
+Conditional Statements:-
+-----------------------
+
+It's block of code that is execute only condition purpose.
+
+1. if:-
+
+syntax:-
+
+if condiition:
+	statement-1
+	statement-2
+	------------
+	------------
+
+if condition is true then statements will be executed otherwise not.
+
+
+
+
+Indentation:- 
+
+Indentation refers to the spaces at the block of code beginning of a code line. Python uses indentation to indicate a block of code. 
+
+Wherein other programming the indentation in code is for readability only,but in python the indentation is very important.
+
+
+Ex:-
+
+name = input("Enter your name:-")
+
+if name == 'Vishal':
+    print("Hi",name,"Good morning")
+
+ Output:-
+
+ Enter your name:-Vishal
+Hi Vishal Good morning
+
+------------------------------------------------
+name = input("Enter your name:-")
+age = eval(input("Enter your age:-"))
+
+if name == 'Vishal' and age == 26:
+    print("Hi",name,"Good morning")
+    print('Vishal age is:-',age)
+
+out:-
+
+Enter your name:-Vishal
+Enter your age:-26
+Hi Vishal Good morning
+Vishal age is:- 26
+
+
+
+Out of indentation:-
+
+name = input("Enter your name:-")
+age = eval(input("Enter your age:-"))
+
+if name == 'Vishal':
+    print("Hi",name,"Good morning")
+print('Hi all of you')
+
+output:-
+Enter your name:-bunty
+Hi all of you
+
+
+
+if-else:-
+-------
+
+Syntax:-
+
+if condition:
+	statement
+
+else:
+	statement
+
+if condition is true then statement of if will be executed otherwise else statement will be executed.
+
+name = input("Enter your name:-")
+
+if name == 'Vishal':
+    print('Hi Vishal Good mornging')
+else:
+    print('Hi Guys Good morning')
+
+
+
+3. if-elif-else:-
+-----------------
+Based on condtional the corresponding statement will be excuted.\
+
+syntax:-
+
+if condition:
+	statement
+
+elif condition:
+	statement-1
+
+elif condition:-
+	statement-3
+
+else:
+	statement-4
+
+
+ex:-
+soft_drinks = input("Enter your choice of drink:-")
+if soft_drinks == "Thumpsop":
+    print("it's best drink")
+elif soft_drinks == "7up":
+    print("it's better")
+elif soft_drinks == "slice":
+    print("craving more")
+else:
+    print("lembu pani is best option")
+
+
+Note:-
+
+1.else part is always optional.
+2.if
+3.if-else
+4.if-elif
+5.if-elif-else
+6.elif----------wrong
+7.else----------wrong
+8.elif-else-----wrong
+
+9.There is no switch statement in python.
+
+Q-1.WAP to find biggest of given 2 numbers?
+
+n1 = eval(input("Enter first number:-"))
+n2 = eval(input("Enter second number:-"))
+
+if n1>n2:
+    print("Biigest no is:-",n1)
+else:
+    print("Biggest no is:-",n2)
+
+
+Q-2.WAP to find biggest of given 3 numbers?
+
+n1=eval(input('enter first number:'))
+n2=eval(input('enter second number:'))
+n3=eval(input('enter third number:'))
+if n1>n2 and n1>n3:
+    print("1st number is greater")
+elif n2>n3:
+    print("2nd number is greater")
+else:
+    print("third number is greater")
+
+
+
+Ternary Operator:- special condition of if/single line conditional statement
+
+synatx:-
+
+variable = statement_1 if condition else statement_2
+
+if condition is True then firstvalue will be considered else secondvalue will be considered.
+
+a = 10
+b = 20
+
+x = a if a>b else b
+print(x)
+
+

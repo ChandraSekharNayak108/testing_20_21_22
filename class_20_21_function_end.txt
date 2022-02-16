@@ -1,0 +1,80 @@
+Anonymous function:-
+-------------------
+
+sometimes we can declare a function without any name,such type of nameless functions are called anonymous functions or lambda functions.
+
+single line code.
+
+lambda function:-
+----------------
+
+we can define by using lambda keyword.
+
+syntax:-
+
+
+variable = lambda parameters:expression
+
+Note:- By using Lambda function we can write very concise code that readability of the program will be improved.
+
+#WAP to craete a lambda function to find squre
+
+s = lambda n:n*n
+print("the squre of 4 is:",s(4))
+
+#WAP lambda to find biggest no.
+
+s = lambda a,b:a if a>b else b
+print("The biggest no is:",s(10,20))
+
+Note:-
+
+Lambda function interally returns expression value and we are not required to write return statement explicitly.
+
+2.Someties we can pass function as argument to another function.in such cases lambda function are best choice.
+
+filter() function:-
+------------------
+we can use filter() function to filter values from the given sequence based on some condition.
+
+syntax:-
+
+variable= filter(function,sequence)
+
+#WAP to filter only even no.
+
+l = [5,10,15,20,25,30,35,40,45,50]
+
+s = list(filter(lambda x:x%2==0,l))
+print(s)
+
+
+map() function:-
+-------------
+For every element present in the given sequence apply some functionality and generate new element with the required modification,For this requirement we should go for map() function.
+
+syntax:-
+
+variable= map(function,sequence)
+
+l = [5,10,15,20,25,30,35,40,45,50]
+
+s = list(map(lambda x:2*x,l))
+print(s)
+
+ reduce():-
+-----------
+
+reduce function reduce sequence of element into a single element by applying the specified function.
+
+syntax:-
+
+variable= map(function,sequence)
+
+reduce() function present in functools module and hence we should import it.
+
+from functools import *
+
+l = [10,20,30,40]
+s = reduce(lambda x,y:x+y,l)
+print(s)

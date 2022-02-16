@@ -1,0 +1,248 @@
+             File Handeling
+                        -------------==
+
+As the part of programmingrequirement,we have to store our data permannently for future purpose.For this requirement we should go for files.
+
+
+Files are very common permanent storage areas to store our data.
+
+Types of Files:-
+--------------
+
+There are 2 types of files are accept in python.
+
+1.Text Fles:
+------------
+
+Usually we can use text file to store character data
+ex:- abc.txt
+
+2.Binary Files.
+--------------
+
+usually we can use binary files to store binary data like images,video files,audio files etc.
+ex:-abc.png
+
+Opening a file:-
+--------------
+
+Before performing any operation(like read or write) on the fiel.First we have to open that file.For this we should use Python's inbuilt function:- open()
+
+But at the time of open,we have to specify mode,which represents the purpose of opening file.
+
+
+syntax:-
+
+variable = open("file_path","mode")
+
+mode:-
+----
+
+read(r):-
+--------
+Open an existing file for read opeartion,The file pointer is positioned at the beginning of the file.If the specified file does not exits then we will get FileNotFoundError.This is default mode.
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","r")
+
+write(w):-
+--------
+Open an existing file for write opeartion.If the file already contain some data then it will be overridden.If the specified file is not alraedy available then this mode will create that file.
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","w")
+
+
+append(a):-
+---------
+Open an exitsting file for append opeartion.It won't override existing data.If the specified file is not already available then this mode will create a new file.
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","a")
+
+Note:- All the above modes are applicable for text files only.If the above modes suffixed with 'b' then these represents for binary files.
+
+ex:- file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","wb")
+
+ex:- rb,wb,ab
+
+
+Closing a File:-
+--------------
+After completing our operation on the filr.It is highly recommended to close the file.For this we have to use close() function.
+
+variable.close()
+
+ex-:
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","r")
+file_open.close()
+
+
+Read:-
+----
+Reading Characters Data from the text
+1.read():- To read total data from the file.
+
+ex:-
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.read()
+print(data)
+f.close()
+
+2.read(n):- To read 'n' Characters from the file.
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.read(1000)
+print(data)
+f.close()
+
+3.readline():-To read only one line.
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.readline()
+print(data)
+f.close()
+
+4.readlines():-To read all lines into a list.
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.readlines()
+for line in data:
+    print(line,end="")
+f.close()
+
+
+
+Various Properties of file object:-
+---------------------------------
+
+Once we opened a file and we got file object,we can get various details related to that file by using its properties.
+
+name:- Name of opened name.
+mode:-Mode in which the file is openeed.
+readable:- Returns boolean value indicates that whether file is readable or not.
+writbale:- Returns boolean value indicates that whether file is writable or not.
+closeed:- Rerturns boolean value indicates that file is closed or not
+
+
+ex:-
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+print("File Name:-",f.name)
+print("File mode:-",f.mode)
+print("Is file readable:-",f.readable())
+print("Is file writable:-",f.writable())
+print("Is file closed:-",f.closed)
+f.close()
+print("2nd_attemped Is file closed:-",f.closed)
+
+
+ex_output:-
+
+File Name:- D:\SCODEEN\testing_17_18_python\class_1_introduction.txt
+File mode:- r
+Is file readable:- True
+Is file writable:- False
+Is file closed:- False
+2nd_attemped Is file closed:- True
+
+
+
+                                File Handeling-2
+                                ----------------
+Writing data to text files:-
+---------------------------
+we can write character data to the text files by using 2 methods
+
+1.write(str)
+2.writelines(list of lines)
+
+write:-
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+f.write("Scodeen is best\n")
+f.write("Mode in which file is opened\n")
+f.write("readable\n")
+print("Successfully")
+f.close()
+
+override
+--------
+if in a file some data are exits then new data in write mode was override pervious data.
+
+'''f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+f.write("Scodeen is best\n")
+f.write("Mode in which file is opened\n")
+f.write("readable\n")
+print("Successfully")
+f.close()'''
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+f.write("Name of file")
+
+
+
+2.writelines
+------------
+
+contain the data from list of string.
+
+#writelines
+
+f= open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+list = ["Swadhin\n ","Swagat\n"," Chiiny\n ","Mukesh\n"]
+f.writelines(list)
+f.close()
+
+Note:-While write data by using write() methods,compulsory we have to provide line separator(\n),otherwise total data should be written to a single line..
+
+
+Writing data to text files but in Append(a) mode:-
+-----------------------------------------------
+
+Open a file,append is won't override exitsing data.if the specified file is not avaialble then append mode create a new file.
+
+1.write(str)
+2.writelines(list of string)
+
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","a")
+f.write("\n \n \n")
+f.write("Scodeen is best\n")
+f.write("Mode in which file is opened\n")
+f.write("readable\n")
+print("Successfully")
+f.close()
+
+
+Closing a File:-
+
+After completing our operations on the file,It is highly recommended to close file,Otherwise when we will use this on onther program it's returns the error,For this we have to use close()
+
+variable.close()
+
+
+The with statement:-
+------------------
+
+The with statement can be used while oprning a file,we can use this to group file operation statements within a block.
+
+Note:-
+
+The advantage of with statement is it will take care closing of file,after completing all opeartions automatically even in the case of exception also,we are not required to close explicitly.
+
+syntax:-
+
+with open("file_path","mode") as variable_name:
+    
+    statements
+
+ex:-
+
+with open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","r") as f:
+    data = f.read()
+    print(data)
+    print("is file Closed:-", f.closed)
+
+print("is file Closed:-",f.closed)
+
+
